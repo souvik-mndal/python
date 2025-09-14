@@ -22,3 +22,10 @@ print(f"the average age of the student are --- {avg}")
 #To extract maths marks from all student 
 math = data[: , 1:2]
 print(f"the maths marks for all student are --- {np.vsplit(math,len(math))}")
+
+
+#To find highest science marks from all student 
+science = data[: , 2:]
+print(f"the highest science marks for all student are --- {science.max()}")
+
+
