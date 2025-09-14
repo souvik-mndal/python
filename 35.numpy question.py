@@ -50,3 +50,8 @@ print( f"there are total {len(young)} students are that younger than 19")
 print(f"the average marks of math is --- {data[:,1:2].mean()} and the science marks is -- {data[:,2:].mean()}")
 
 
+#get data of student who scored atleast 80 in both the subjects
+ans = data[(data[:,1] >=80) & (data[:,2] >= 80)]
+print(f"the elements that have both the numbers atleast 80 are --- {ans}")
+
+    
