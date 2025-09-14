@@ -13,3 +13,7 @@ data = np.array([
 #To get the shape of the matrix
 print(f"the shape of the matrix is --- {np.shape(data)}")
 
+#To get the average age of the student
+age = data[: , 0:1 ]
+avg = age.sum() / len(age)
+print(f"the average age of the student are --- {avg}")
