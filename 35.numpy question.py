@@ -36,3 +36,17 @@ for i in range( len(boolcheck) ):
         print(f"the data of the student who scored more than 90 in maths are ---\n {data[i]}")
 
 
+#increase maths marks by 5
+print(f"increase the math marks by 5 --- {data[:,1:2]+5}")
+
+
+#find how many students are younger than 19
+young = data[:,0:1]
+young = young[young < 19]
+print( f"there are total {len(young)} students are that younger than 19")
+
+
+#the average marks of each subjects
+print(f"the average marks of math is --- {data[:,1:2].mean()} and the science marks is -- {data[:,2:].mean()}")
+
+
