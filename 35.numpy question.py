@@ -52,6 +52,9 @@ print(f"the average marks of math is --- {data[:,1:2].mean()} and the science ma
 
 #get data of student who scored atleast 80 in both the subjects
 ans = data[(data[:,1] >=80) & (data[:,2] >= 80)]
-print(f"the elements that have both the numbers atleast 80 are --- {ans}")
+print(f"the elements that have both the numbers atleast 80 are --- {ans}\n")
 
-    
+
+#replace all science marks less than 75 with 0
+data[:,2][data[:,2] < 75 ] = 0
+print(data)
