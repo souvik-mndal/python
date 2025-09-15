@@ -11,50 +11,39 @@ data = np.array([
 
 
 #To get the shape of the matrix
-print(f"the shape of the matrix is --- {np.shape(data)}")
+print(f"The shape of the matrix will be --- {data.shape}")
 
 #To get the average age of the student
-age = data[: , 0:1 ]
-print(f"the average age of the student are --- {np.mean(age)}")
-
+print(f"the average age of the students are --- {data[:,0].mean()}")
 
 #To extract maths marks from all student 
-math = data[: , 1:2]
-print(f"the maths marks for all student are --- {np.vsplit(math,len(math))}")
+print(f"extracting all the marks of maths are --- {data[:,1]}")
 
 
 #To find highest science marks from all student 
-science = data[: , 2:]
-print(f"the highest science marks for all student are --- {science.max()}")
+print(f"to find the highest science marks is --- {data[:,2].max()}")
 
 
-#To get the details of the student who scored more than 90 in maths
-math = data[: , 1:2]
-boolcheck = math > 90
-for i in range( len(boolcheck) ):
-    if( boolcheck[i] ):
-        print(f"the data of the student who scored more than 90 in maths are ---\n {data[i]}")
+# To get the details of the student who scored more than 90 in maths
+print(f"to get all the details who got more than 90in maths is --- {data[data[:,1] > 90]}")
 
 
 #increase maths marks by 5
-print(f"increase the math marks by 5 --- {data[:,1:2]+5}")
+print(f"increase the marks of math by 5 --- {data[:,1]+5}")
 
 
 #find how many students are younger than 19
-young = data[:,0:1]
-young = young[young < 19]
-print( f"there are total {len(young)} students are that younger than 19")
+print(f"to find the youngest students then 19 --- {data[data[:,0]<19]}")
 
 
 #the average marks of each subjects
-print(f"the average marks of math is --- {data[:,1:2].mean()} and the science marks is -- {data[:,2:].mean()}")
+print(f"the average marks of maths is --- {data[:,1].mean()} and the average marks of math is --- {data[:,2].mean()}")
 
 
 #get data of student who scored atleast 80 in both the subjects
-ans = data[(data[:,1] >=80) & (data[:,2] >= 80)]
-print(f"the elements that have both the numbers atleast 80 are --- {ans}\n")
+print(f"the students who scored atleast 80 in both the subjects --- {data[(data[:,1]>80) & (data[:,2]>80)]}")
 
 
 #replace all science marks less than 75 with 0
-data[:,2][data[:,2] < 75 ] = 0
-print(data)
+data[:,2][data[:,2]<75] = 0 
+print(f"replacing all the science marks less than 75 --- {data}")
