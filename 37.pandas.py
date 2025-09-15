@@ -47,7 +47,20 @@ file['StartMth'] = file['Title'].apply(extractStartMonth)
 
 
 #extract start month
-print(file.loc[0]['Title'])
+# print(file.loc[0]['Title'])
 file['EndMth'] = file['Title'].apply(extractEndMonth)
-print(file)
+# print(file)
 
+
+
+#which anime has the highest score
+print("the anime with the highest score is ----\n")
+print(file[(file['Score']) == (file['Score'].max())])
+
+
+#top 5 highest scoring anime
+print("\n\nthe top 5 highest scoring animes are --- \n")
+print(file.head())
+
+
+#which anime has the highest ep count
