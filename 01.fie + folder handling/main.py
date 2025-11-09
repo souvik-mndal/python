@@ -1,15 +1,15 @@
 from pathlib import Path
 import os
 
-def see():
-    path = Path('')
+def see(d):
+    path = Path(d)
     items = list(path.rglob("*"))
     for i,items in enumerate(items):
         print(f"{i+1} --- {items}")
     
 
 def one():
-    see()
+    see('')
     filename = input("\n\nEnter the file name : ")
     p = Path(filename)
     try:
@@ -26,7 +26,7 @@ def one():
 
 
 def two():
-    see()
+    see('')
     foldername = input("\n\nEnter the folder name : ")
     p = Path(foldername)
     try:
@@ -39,13 +39,21 @@ def two():
     else:
         print("folder created successfully\n\n")
 
+
+
+
+
 while( 1 ):
     print("choose 1 to create a file")
     print("choose 2 to create a folder")
+    print("choose 3 to create a file inside a folder")
+    print("choose 4 to create a folder inside a folder")
 
     choice = int(input("Enter the choice : "))
     if( choice == 1 ):
         one()
     elif( choice == 2 ):
         two()
+    elif( choice == 3 ):
+        three()
 
